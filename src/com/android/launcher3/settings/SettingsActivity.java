@@ -48,6 +48,7 @@ import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherFiles;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.model.WidgetsModel;
 import com.android.launcher3.states.RotationHelper;
@@ -137,7 +138,15 @@ public class SettingsActivity extends FragmentActivity
     }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { }
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { 
+        switch (key) {
+            case Utilities.KEY_DOCK_SEARCH:
+                LauncherAppState.getInstanceNoCreate().setNeedsRestart();
+                break;
+            default:
+                break;
+        }
+    }
 
     private boolean startPreference(String fragment, Bundle args, String key) {
         if (Utilities.ATLEAST_P && getSupportFragmentManager().isStateSaved()) {
@@ -188,6 +197,7 @@ public class SettingsActivity extends FragmentActivity
         private String mHighLightKey;
         private boolean mPreferenceHighlighted = false;
         private Preference mDeveloperOptionPref;
+        private Preference mShowGoogleBarPref;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -270,6 +280,11 @@ public class SettingsActivity extends FragmentActivity
                 case DEVELOPER_OPTIONS_KEY:
                     mDeveloperOptionPref = preference;
                     return updateDeveloperOption();
+
+                case Utilities.KEY_DOCK_SEARCH:
+                    mShowGoogleBarPref = preference;
+                    updateIsGoogleAppEnabled();
+                    return true;
             }
 
             return true;
@@ -291,6 +306,12 @@ public class SettingsActivity extends FragmentActivity
                 }
             }
             return showPreference;
+        }
+
+        private void updateIsGoogleAppEnabled() {
+            if (mShowGoogleBarPref != null) {
+                mShowGoogleBarPref.setEnabled(Utilities.isGSAEnabled(getContext()));
+            }
         }
 
         @Override
