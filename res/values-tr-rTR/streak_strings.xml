@@ -2,5 +2,8 @@
 <resources>
     <!-- Application name -->
     <!-- Hide labels -->
-    <!-- Search bar -->
+    <string name="title_desktop_labels">Masaüstü etiketleri</string>
+    <string name="summary_desktop_labels">Ana ekranda simge etiketlerini göster</string>
+    <string name="title_drawer_labels">Çekmece etiketleri</string>
+    <string name="summary_drawer_labels">Çekmecede simge etiketlerini göster</string>
 </resources>
