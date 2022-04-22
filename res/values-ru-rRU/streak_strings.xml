@@ -2,4 +2,7 @@
 <resources>
     <!-- Application name -->
     <!-- Hide labels -->
+    <string name="title_desktop_labels">Подписи рабочего стола</string>
+    <string name="summary_desktop_labels">Отображать подписи значков на рабочем столе</string>
+    <string name="title_drawer_labels">Заголовки списка приложений</string>
 </resources>
