@@ -2,4 +2,8 @@
 <resources>
     <!-- Application name -->
     <!-- Hide labels -->
+    <string name="title_desktop_labels">Etichette desktop</string>
+    <string name="summary_desktop_labels">Mostra le etichette dell\'icona sul desktop</string>
+    <string name="title_drawer_labels">Etichette nel drawer</string>
+    <string name="summary_drawer_labels">Mostra nomi icone nel drawer</string>
 </resources>
