@@ -2,7 +2,14 @@
 <resources>
     <!-- Application name -->
     <!-- Hide labels -->
+    <string name="title_desktop_labels">Etiquettes de bureau</string>
+    <string name="summary_desktop_labels">Afficher les libellés des icônes sur le bureau</string>
+    <string name="title_drawer_labels">Libellés du tiroir</string>
+    <string name="summary_drawer_labels">Afficher les libellés des icônes dans le tiroir d\'applications</string>
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Glisser pour accéder à l\'application Google</string>
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Lorsque vous balayez vers la droite depuis l\'écran d\'accueil principal</string>
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Lorsque vous balayez vers la gauche depuis l\'écran d\'accueil principal</string>
 </resources>
